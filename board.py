@@ -1,12 +1,15 @@
 from tupy import *
 
 class Campo(Image):
+    """
+    Classe responsável por mapear cada casa do tabuleiro e seus respectivos valores do eixo x e y, atráves de um dicionário. Além de posicionar o arquivo da imagem do tabuleiro. Não retorna nada.
+    """
     def __init__(self) -> None:
-        self.file = 'fundo4.png' # Arquivo de imagem do tabuleiro
-        self.x = 380 # Coordenada x da imagem do tabuleiro
-        self.y = 230 # Coordenada y da imagem do tabuleiro
-        self.casas = {
-            # Coordenadas de cada casa do tabuleiro
+        self._file = 'fundo4.png' 
+        self._x = 380 
+        self._y = 230 
+        self._angle = 0
+        self._casas = {
             '1': {'x': 90, 'y': 115}, 
             '2': {'x': 162, 'y': 115}, 
             '3': {'x': 234, 'y': 115}, 
@@ -42,4 +45,27 @@ class Campo(Image):
             '33': {'x': 666, 'y': 423},
             '34': {'x': 740, 'y': 423},
         }
-        # Dicionário que mapeia o número de cada casa para suas coordenadas
+    @property
+    def x(self):
+            try:
+                return self._x
+            except AttributeError as e:
+                toast("Você não pode alterar a posição do tabuleiro!")
+    @property
+    def y(self):
+            try:
+                return self._y
+            except AttributeError as e:
+                toast("Você não pode alterar a posição do tabuleiro!")
+    @property
+    def file(self):
+            try:
+                return self._file
+            except AttributeError as e:
+                toast("Você não pode alterar os aquivos do jogo!")
+    @property
+    def angle(self):
+            try:
+                return self._angle
+            except AttributeError as e:
+                toast("Você não pode alterar o ângulo do tabuleiro!")

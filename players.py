@@ -2,39 +2,73 @@ from tupy import *
 from board import Campo
 from home import Casa
 
-#Jogador Fada anda na X = 72 na primeira linha, em que Y = 115
-#Jogador Fada final primeira linha Y = 115 X = 810
-#Início X = 40 e Y = 115
-#Jogador Fada para baixo Y = 77
-#Jogador Fada X = 90 e Y = 269 segunda curva, final segunda linha 
-#Jogador Fada X = 666 e Y = 432 ultima linha 
-#Fim do tabuleiro X= 740
 
 class Jogador (Image):
+    """
+    Classe responsável por posicionar os jogadores no tabuleiro. Recebe como parêmentro o nome do personagem (fada ou duende), a função 'Campo' e 'Casa' que possibilitam a movimentação dos jogadores pelo tabuleiro e identificação das casas especiais. Possui como atributo a vida de cada jogador e a sua vez (se está habilitado a andar). Não retorna nenhum valor.
+    """
     def __init__(self, personagem: str, campo: Campo, casa: Casa) -> None:
-        self.file = personagem + ".png" # Arquivo de imagem do jogador
-        self.x = 40 # Coordenada x da imagem do jogador
-        self.y = 115 # Coordenada y da imagem do jogador
-        self.vida = 100 # Vida do jogador
-        self.casa = casa
-        self.campo = campo
-        self.vez = True # Indica se é a vez do jogador
+        self._file = personagem + ".png" 
+        self._x = 40 
+        self._y = 115 
+        self._vida = 100
+        self._casa = casa
+        self._campo = campo
+        self._vez = True 
+        self._angle = 0
 
-    def andar (self, qtd: int) -> None:
-        self.casa.numero += qtd # Atualiza o número da casa com base na quantidade de casas a andar do tabuleiro
-        if self.casa.numero >= 34:
-            self.x = 740
-            self.y = 423
-            toast("Você achou o baú de ouro no final do arco-íris!") # Exibe uma mensagem se o jogador chegou ao final do tabuleiro
+    @property
+    def file(self):
+            try:
+                return self._file
+            except AttributeError as e:
+                toast("Você não pode alterar os aquivos do jogo!")
+    @property
+    def angle(self):
+            try:
+                return self._angle
+            except AttributeError as e:
+                toast("Você não pode alterar o ângulo do jogador!")
+
+    @property
+    def x(self):
+            try:
+                    return self._x
+            except AttributeError as e:
+                toast("Você não pode alterar a posição do jogador!")
+
+    @property
+    def vida(self):
+            try:
+                    return self._vida
+            except AttributeError as e:
+                toast("Você não pode alterar a vida do jogador!")
+    
+    @property
+    def y(self):
+            try:
+                return self._y
+            except AttributeError as e:
+                toast("Você não pode alterar a posição do jogador!")
+        
+    def _andar (self, qtd: int) -> None:
+        """
+        Método que permite a movimentação do jogador pelo tabuleiro. Recebe como parâmetro a quantidade de casas que devem ser pecorridas de acordo com o valor obtido no método 'jogarDado'. Caso o jogador chegue ao final do tabuleiro, exibe a mensagem que indica que o jogador venceu jogo. Além disso, executa os resultados e suas devidas recompensas obtidas na classe 'Casa'. Retorna None.
+        """
+        self._casa.numero += qtd
+        if self._casa.numero >= 34:
+            self._x = 740
+            self._y = 423
+            toast("Você achou o baú de ouro no final do arco-íris!") 
         else:
-            self.x = self.campo.casas[str(self.casa.numero)]['x'] # Atualiza a coordenada x do jogador com base na posição da casa
-            self.y = self.campo.casas[str(self.casa.numero)]['y'] # Atualiza a coordenada y do jogador com base na posição da casa
+            self._x = self._campo._casas[str(self._casa.numero)]['x'] 
+            self._y = self._campo._casas[str(self._casa.numero)]['y'] 
 
-        resultado = self.casa.verificar_casa() # Verifica a casa em que o jogador parou
+        resultado = self._casa.verificar_casa() 
  
         if resultado[0] == 0:
-            self.andar(resultado[1]) # Se o resultado for 0, significa que o jogador deve andar novamente
+            self._andar(resultado[1])
         elif resultado [0] == 1:
-            self.vida += resultado[1] # Se o resultado for 1, o jogador ganha vida
+            self._vida += resultado[1] 
         elif resultado[0] == 2:
-            self.vez = False # Se o resultado for 2, é a vez do próximo jogador
+            self._vez = False 
