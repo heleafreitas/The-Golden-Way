@@ -11,6 +11,8 @@ Jogo de tabuleiro em que dois jogadores escolhem seus respectivos personagens (d
    
    2.1. Não será possível jogar o dado duas vezes seguidas, deve-se esperar a vez do oponente na rodada.
 
+![jogarDado](https://github.com/heleafreitas/The-Golden-Way/assets/82972511/7a5b83e1-10b9-47ee-b3b9-5d0f3a78972b)
+
 3. Caso o jogador caia na **casa da sorte**, é acrescentado 50 pontos de vida ao personagem.
 
 4. Caso o jogador caia na **casa surpresa** poderá receber um bônus (ganhar pontos de vida ou avançar até 3 casas) ou uma penalidade (perder pontos de vida ou voltar até 3 casas).
@@ -22,6 +24,8 @@ Jogo de tabuleiro em que dois jogadores escolhem seus respectivos personagens (d
   5.2. Caso sobreviva ao ataque, poderá continuar a jogar mas com uma quantidade de vida menor devido ao ataque sofrido.
   
   5.3. Caso o ponto de vida seja menor que a força do monstro, perderá o embate e retornará ao início da jornada com os pontos de vida iniciais.
+
+![sobreviverInimigo](https://github.com/heleafreitas/The-Golden-Way/assets/82972511/1f9cd8c6-598c-4417-a1b5-9406795d5517)
 
 6. O jogador que chegar primeiro ao final dessa aventura ganha o jogo.
 
