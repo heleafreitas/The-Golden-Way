@@ -54,15 +54,12 @@ class Casa:
         resultado = [1, 50]
         return resultado 
     
-    def casa_do_inimigo(self) -> Monstro:
+    def casa_do_inimigo(self) -> None:
         """ 
         Método que determina o comportamento da casa do inimigo. Retorna a classe 'Monstro', passando como parâmentro o tipo do monstro selecionado aleatoriamente (ogro ou troll), sua força, e sua posição no tabuleiro, nas respectivas casas do inimigo. O monstro só é exibido no tabuleiro com a execução dessa função.
         """
         tipo = random.choice(["ogro", "troll"]) 
-        if tipo == "ogro":
-            forca = 80 
-        else:
-            forca = 50 
+        forca = 80 
         x =  self.campo._casas[str(self.numero)]['x'] 
         y = self.campo._casas[str(self.numero)]['y'] 
         inimigo = Monstro(tipo, forca, x, y)

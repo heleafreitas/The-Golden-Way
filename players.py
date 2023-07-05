@@ -19,37 +19,21 @@ class Jogador (Image):
 
     @property
     def file(self):
-            try:
-                return self._file
-            except AttributeError as e:
-                toast("Você não pode alterar os aquivos do jogo!")
+        return self._file
     @property
     def angle(self):
-            try:
-                return self._angle
-            except AttributeError as e:
-                toast("Você não pode alterar o ângulo do jogador!")
-
+        return self._angle
     @property
     def x(self):
-            try:
-                    return self._x
-            except AttributeError as e:
-                toast("Você não pode alterar a posição do jogador!")
-
+        return self._x
+           
     @property
     def vida(self):
-            try:
-                    return self._vida
-            except AttributeError as e:
-                toast("Você não pode alterar a vida do jogador!")
+        return self._vida
     
     @property
     def y(self):
-            try:
-                return self._y
-            except AttributeError as e:
-                toast("Você não pode alterar a posição do jogador!")
+        return self._y
         
     def _andar (self, qtd: int) -> None:
         """
@@ -65,10 +49,11 @@ class Jogador (Image):
             self._y = self._campo._casas[str(self._casa.numero)]['y'] 
 
         resultado = self._casa.verificar_casa() 
- 
+
+        
         if resultado[0] == 0:
             self._andar(resultado[1])
         elif resultado [0] == 1:
             self._vida += resultado[1] 
         elif resultado[0] == 2:
-            self._vez = False 
+            self._vez = False  

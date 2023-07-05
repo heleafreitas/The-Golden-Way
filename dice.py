@@ -16,44 +16,32 @@ class Dado (Image):
   
   @property
   def file(self):
-            try:
-                return self._file
-            except AttributeError as e:
-                toast("Você não pode alterar os aquivos do jogo!")
+     return self._file
+           
   @property
   def angle(self):
-            try:
-                return self._angle
-            except AttributeError as e:
-                toast("Você não pode alterar o ângulo do dado!")
+    return self._angle
+            
   @property
   def x(self):
-      try:
-        return self._x
-      except AttributeError as e:
-         toast("Você não pode alterar a posição do dado!")
+    return self._x
   @property
   def y(self):
-    try:
-      return self._y
-    except AttributeError as e:
-      toast("Você não pode alterar a posição do dado!")
-  
+    return self._y
+    
 
   def jogarDado(self, jogador: Jogador) -> None:
     """ 
     Método que verifica se é a vez do jogador por meio da chamada da outra função "VerificarVez", caso essa retorne Verdadeiro, faz com que o jogador recebido como parâmentro ande um valor aleátorio de 1 a 6 casas. Passa o valor obtido para o método 'andar' da classe ""Jogador". Não retorna nada.
     """
-    try:
-      verificar = self._verificarVez(jogador)
-      if verificar:
-        jogador._vez = False
-        n = random.randint(1,self._faces) 
-        toast(f"Você andou {n} casas") 
-        jogador._andar(n) 
-        self._jogador = jogador 
-    except NameError as e:
-      toast("Personagem não faz parte do jogo")
+    verificar = self._verificarVez(jogador)
+    if verificar:
+      jogador._vez = False
+      n = random.randint(1,self._faces) 
+      toast(f"Você andou {n} casas") 
+      jogador._andar(n) 
+      self._jogador = jogador 
+
       
     
 

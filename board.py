@@ -47,25 +47,14 @@ class Campo(Image):
         }
     @property
     def x(self):
-            try:
-                return self._x
-            except AttributeError as e:
-                toast("Você não pode alterar a posição do tabuleiro!")
+         return self._x
     @property
     def y(self):
-            try:
-                return self._y
-            except AttributeError as e:
-                toast("Você não pode alterar a posição do tabuleiro!")
+         return self._y
     @property
     def file(self):
-            try:
-                return self._file
-            except AttributeError as e:
-                toast("Você não pode alterar os aquivos do jogo!")
+         return self._file
     @property
     def angle(self):
-            try:
-                return self._angle
-            except AttributeError as e:
-                toast("Você não pode alterar o ângulo do tabuleiro!")
+         return self._angle
+           

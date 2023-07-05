@@ -14,29 +14,15 @@ class Monstro (Image):
 
     @property
     def file(self):
-            try:
-                return self._file
-            except AttributeError as e:
-                toast("Você não pode alterar os aquivos do jogo!")
+        return self._file
     @property
     def angle(self):
-            try:
-                return self._angle
-            except AttributeError as e:
-                toast("Você não pode alterar o ângulo do inimigo!")
+        return self._angle
     @property
     def forca(self):
-                return self._forca
-    # @forca.setter
-    # def forca(self, forca):
-    #     try:
-    #         if self.forca == forca:
-    #              self.forca = forca
-    #     except AttributeError as e:
-    #             print("Você não pode alterar a força do inimigo!")
-            
+        return self._forca
 
-
+#Era suposto ter o tipo do jogador escrito (self, jogador:Jogador), porém na hora da construção do código deu erro ao importar a classe "Jogador".
     def atacar(self, jogador) -> None:
         """
         Método que define as ações tomadas quando um jogador encontra um inimigo. Caso ele se encontre na casa do inimigo, e sua vida seja maior que a força do inimigo, o jogador vence e continua, se não for, volta para o início. Recebe como parâmentro o jogador que deve ser atacado,  não permite o monstro  atacar um jogador fora das casas determinadas. Não possui retorno.
@@ -47,7 +33,7 @@ class Monstro (Image):
                 jogador._vida -= self._forca 
             else:
                 jogador._casa.numero = 0
-                jogador._x = 40
+                jogador._x = 40 
                 jogador._y = 115
                 jogador._vida = 100 
                 toast("Você perdeu!!") 
