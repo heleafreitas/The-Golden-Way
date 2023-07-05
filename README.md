@@ -1,23 +1,32 @@
-# The-Golden-Way
+# The Golden Way
+
+   ![capa_do_jogo](https://github.com/heleafreitas/The-Golden-Way/assets/82972511/0bcd2945-56a1-4c61-9d88-20821b04f807)
+
 Jogo de tabuleiro em que dois jogadores escolhem seus respectivos personagens (duende ou fada) do mundo da fantasia e embarcam numa aventura em busca do baú de ouro no final do caminho. Porém, no meio do trajeto eles deverão enfrentar os inimigos (trolls e ogros), acumulando bônus durante o caminho e contando com a sorte nas casas de recompensa surpresa. 
 
 ## Regras e Manual de Uso
 
 1. Para executar o jogo basta baixar a pasta e executar no terminal o comando **python main.py**:
 
-![terminal](https://github.com/heleafreitas/The-Golden-Way/assets/82972511/3abd9617-915c-4415-916e-58c66c90ff1b)
+   ![terminal](https://github.com/heleafreitas/The-Golden-Way/assets/82972511/3abd9617-915c-4415-916e-58c66c90ff1b)
 
 2. O primeiro usuário a jogar o dado define a ordem que o jogo vai acontecer. Para isso, deve-se clicar na imagem do dado no canto superior esquerdo da tela e selecionar o método **jogarDado** e **escrever o nome do seu personagem (duende ou fada)**:
    
    2.1. Não será possível jogar o dado duas vezes seguidas, deve-se esperar a vez do oponente na rodada.
 
-![jogarDado](https://github.com/heleafreitas/The-Golden-Way/assets/82972511/7a5b83e1-10b9-47ee-b3b9-5d0f3a78972b)
+   ![jogarDado](https://github.com/heleafreitas/The-Golden-Way/assets/82972511/7a5b83e1-10b9-47ee-b3b9-5d0f3a78972b)
 
 3. Caso o jogador caia na **casa da sorte**, é acrescentado 50 pontos de vida ao personagem.
 
+   ![casa_da_sorte](https://github.com/heleafreitas/The-Golden-Way/assets/82972511/870f65ae-c382-4339-b09f-32eb7e0c8c38)
+
 4. Caso o jogador caia na **casa surpresa** poderá receber um bônus (ganhar pontos de vida ou avançar até 3 casas) ou uma penalidade (perder pontos de vida ou voltar até 3 casas).
 
+   ![casa_surpresa](https://github.com/heleafreitas/The-Golden-Way/assets/82972511/73585311-a893-43af-8cef-10bac2473a52)
+
 5. Caso o jogador caia na **casa do inimigo** deverá clicar no monstro e selecionar o método **atacar** para tentar sobreviver a ele.
+
+   ![cada_do_inimigo](https://github.com/heleafreitas/The-Golden-Way/assets/82972511/1e483d5f-34bc-4e78-8d05-7dd49a382d3d)
 
   5.1. Não será possível jogar novamente o dado sem ter enfrentado o inimigo, mesmo que seja a sua rodada.
   
@@ -25,7 +34,7 @@ Jogo de tabuleiro em que dois jogadores escolhem seus respectivos personagens (d
   
   5.3. Caso o ponto de vida seja menor que a força do monstro, perderá o embate e retornará ao início da jornada com os pontos de vida iniciais.
 
-![sobreviverInimigo](https://github.com/heleafreitas/The-Golden-Way/assets/82972511/1f9cd8c6-598c-4417-a1b5-9406795d5517)
+   ![sobreviverInimigo](https://github.com/heleafreitas/The-Golden-Way/assets/82972511/1f9cd8c6-598c-4417-a1b5-9406795d5517)
 
 6. O jogador que chegar primeiro ao final dessa aventura ganha o jogo.
 
